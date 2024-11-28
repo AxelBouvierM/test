@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        /* .invoice-container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background: #f9f9f9;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        } */
+        .invoice-container {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-container h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.invoice-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.invoice-container th, .invoice-container td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #dddddd;
+}
+
+.invoice-container th {
+    background-color: #f4f4f4;
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #555555;
+    margin-top: 20px;
+}
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header img {
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #333;
+        }
+        .details {
+            margin-bottom: 20px;
+        }
+        .details .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .details .row div {
+            width: 48%;
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background: #f0f0f0;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        .btn-primary {
+    background-color: #2b354e;
+    border-color: #2b354e;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #1f283d;
+    border-color: #1f283d;
+}
+    </style>
+    <title>Cotización Hey Now</title>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="header">
+            <img src="heynow-header1.png" alt="Logo">
+            <h1>Cotización Hey Now</h1>
+        </div>
+        <!-- <div class="details">
+            <div class="row">
+                <div>
+                    <strong>Cliente:</strong> <span id="clientName">Axel Bouvier</span><br>
+                    <strong>Email:</strong> <span id="clientEmail">axel@example.com</span>
+                </div>
+                <div>
+                    <strong>Fecha:</strong> <span id="quoteDate">28/11/2024</span><br>
+                    <strong>Válida Hasta:</strong> <span id="validDate">12/12/2024</span>
+                </div>
+            </div>
+        </div> -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Tipo de pago</th>
+                    </tr>
+                </thead>
+                <tbody id="quoteItems">
+                    <!-- Los elementos se agregarán aquí dinámicamente -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="3" style="text-align: right;">Horas de desarrollo</th>
+                        <th id="grandTotal"></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="footer">
+            <p>Gracias por confiar en Hey Now. <br> Esta cotización es válida por 30 días desde la fecha de emisión: <span id="fechaActual"></span>.</p>
+        </div>
+        <div class="text-center mt-4">
+            <button type="button" id="buttonSend" class="btn btn-primary px-4 py-2">Descargar</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="./cotizacionRealizada.js"></script>
+</body>
+</html>
