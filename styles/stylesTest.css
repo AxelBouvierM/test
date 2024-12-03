@@ -1,0 +1,42 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #2b354e;
+}
+.logo {
+    max-height: 100px;
+}
+
+form {
+    border: 1px solid #e0e0e0;
+}
+
+form legend {
+    font-size: 1.25rem;
+    color: #2b354e;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+form .form-label {
+    font-weight: bold;
+    color: #2b354e;
+}
+
+.btn-primary {
+    background-color: #2b354e;
+    border-color: #2b354e;
+}
+
+.btn-primary:hover {
+    background-color: #212a3e;
+    border-color: #212a3e;
+}
+
+.shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

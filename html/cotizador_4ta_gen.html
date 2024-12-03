@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/stylesTest.css" type="text/css">
+    <link rel="shortcut icon" href="../heynow-header1.png" />
+    <title>Cotizador - Cuarta gen - Hey Now</title>
+</head>
+
+<body>
+    <div class="container my-5">
+        <!-- Logo Section -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-6 text-center">
+                <img src="../heynow-header1.png" alt="Hey Now Logo" class="logo img-fluid">
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-12">
+                <form class="bg-white p-4 shadow rounded">
+                    <h2 class="text-center mb-4">Cotizador - Cuarta generación</h2>
+
+                    <!-- Step 1: Bot Configuration -->
+                    <fieldset class="mb-4">
+                        <legend class="text-secondary">1. Configuración del Bot</legend>
+                        <!--  <div class="mb-3">
+                            <label for="inputBotType" class="form-label">Seleccione el tipo de bot</label>
+                            <select id="inputBotType" class="form-select">
+                                <option value="1">Bot de 1era generación</option>
+                                <option value="4">Bot de 4ta generación</option>
+                            </select>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="inputCUB" class="form-label">Casos de uso sin integraciones</label>
+                                <input type="number" id="inputCUB" class="form-control" placeholder="1">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="inputCUI" class="form-label">Casos de uso con integraciones</label>
+                                <input type="number" id="inputCUI" class="form-control" placeholder="1">
+                            </div>
+                            <div id="integraciones" class="col-md-6 mb-3" hidden>
+                                <label for="inputIntegraciones" class="form-label">Cantidad de integraciones</label>
+                                <input type="number" id="inputIntegraciones" class="form-control" placeholder="1">
+                                <p id="error"></p>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputAssistant" class="form-label">¿Incluir asistente conversacional?</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="inputAssistantYes" name="inputAssistant" value="SI"
+                                        class="form-check-input">
+                                    <label for="inputAssistantYes" class="form-check-label">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="inputAssistantNo" name="inputAssistant" value="No"
+                                        class="form-check-input" checked>
+                                    <label for="inputAssistantNo" class="form-check-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Step 2: Sesiones -->
+                    <fieldset class="mb-4">
+                        <legend class="text-secondary">2. Paquetes de Sesiones</legend>
+                        <!--  <div class="mb-3">
+                            <label for="inputSesionesHey" class="form-label">Paquete de Sesiones Hey</label>
+                            <select id="inputSesionesHey" class="form-select">
+                                <option value="0-0">Ya tiene contratado</option>
+                                <option value="2500-300">Hasta 2500 sesiones Hey</option>
+                                <option value="5000-500">Hasta 5000 sesiones Hey</option>
+                                <option value="10000-700">Hasta 10.000 sesiones Hey</option>
+                                <option value="20000-900">Hasta 20.000 sesiones Hey</option>
+                                <option value="30000-1200">Hasta 30.000 sesiones Hey</option>
+                                <option value="40000-1450">Hasta 40.000 sesiones Hey</option>
+                                <option value="50000-1750">Hasta 50.000 sesiones Hey</option>
+                                
+                            </select>
+                        </div> -->
+                        <div class="mb-3">
+                            <label for="inputSesionesHeyIA" class="form-label">Paquete de Sesiones Hey con IA</label>
+                            <select id="inputSesionesHeyIA" class="form-select">
+                                <option value="0-0">Ya tiene contratado</option>
+                                <option value="2500-500">Hasta 2500 sesiones Hey con IA</option>
+                                <option value="5000-800">Hasta 5000 sesiones Hey con IA</option>
+                                <option value="10000-1600">Hasta 10.000 sesiones Hey con IA</option>
+                                <option value="20000-2300">Hasta 20.000 sesiones Hey con IA</option>
+                                <option value="30000-3600">Hasta 30.000 sesiones Hey con IA</option>
+                                <option value="40000-4300">Hasta 40.000 sesiones Hey con IA</option>
+                                <option value="50000-5250">Hasta 50.000 sesiones Hey con IA</option>
+
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <!-- Step 3: Configuración Avanzada -->
+                    <fieldset class="mb-4">
+                        <legend class="text-secondary">3. Configuración Avanzada</legend>
+                        <div class="mb-3">
+                            <label for="inputVPN" class="form-label">¿Incluye VPN?</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="inputVPNYes" name="inputVPN" value="SI"
+                                        class="form-check-input">
+                                    <label for="inputVPNYes" class="form-check-label">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="inputVPNNo" name="inputVPN" value="No"
+                                        class="form-check-input" checked>
+                                    <label for="inputVPNNo" class="form-check-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputAdvancedFeatures" class="form-label">¿Qué características desea
+                                incluir?</label>
+                            <div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="inputImageBot" name="inputAdvancedFeatures"
+                                        value="ImageBot" class="form-check-input">
+                                    <label for="inputImageBot" class="form-check-label">ImageBot</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="inputVoice2Text" name="inputAdvancedFeatures"
+                                        value="Voice2Text" class="form-check-input">
+                                    <label for="inputVoice2Text" class="form-check-label">Voice2Text</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="inputCatalogo" name="inputAdvancedFeatures"
+                                        value="Catálogo" class="form-check-input">
+                                    <label for="inputCatalogo" class="form-check-label">Catálogo (solo en
+                                        WhatsApp)</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputSoporte" class="form-label">Soporte extendido</label>
+                                <select id="inputSoporte" class="form-select">
+                                    <option value="0-0">Soporte basico USD 0</option>
+                                    <option value="12-450-extendido">Soporte extendido - 12 horas USD 450</option>
+                                    <option value="20-990-enterprise">Soporte enterprise - 20 horas USD 990</option>
+                                    <option value="40-3900-ejecutivo">Soporte ejecutivo - 40 horas USD 3900</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <!-- Submit -->
+                    <div class="text-center">
+                        <button type="button" id="buttonSend" class="btn btn-primary w-50">Cotizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/cotizador4ta.js"></script>
+</body>
+
+</html>
