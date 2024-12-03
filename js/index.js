@@ -126,8 +126,8 @@ Seleccionar tipo de partner. */
 function redirect() {
     let botType = document.querySelector('#inputBotType').value
     window.localStorage.setItem('botType', botType)
-    if (botType == '1') window.location.href = 'cotizador_1era_gen.html'
-    if (botType == '2') window.location.href = 'cotizador_mailbot.html'
-    if (botType == '3') window.location.href = 'cotizador_voicebot.html'
-    if (botType == '4') window.location.href = 'cotizador_4ta_gen.html'
+    if (botType == '1') window.location.href = '/html/cotizador_1era_gen.html'
+    if (botType == '2') window.location.href = '/html/cotizador_mailbot.html'
+    if (botType == '3') window.location.href = '/html/cotizador_voicebot.html'
+    if (botType == '4') window.location.href = '/html/cotizador_4ta_gen.html'
 }
